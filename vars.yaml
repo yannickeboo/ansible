@@ -1,6 +1,9 @@
-var1:
-  - httpd
-var2:
+var1: httpd  # only one item
+var2:  # when you have a list of items to install
   - nginx
   - postgresql-server
   - postgresql
+var3: # dictionnary
+  bfs
+  cifs
+  # to call a directionnary use, argument: "{{ var3[bfs]}}"
