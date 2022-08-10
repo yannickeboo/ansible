@@ -1,0 +1,6 @@
+var1:
+  - httpd
+var2:
+  - nginx
+  - postgresql-server
+  - postgresql
