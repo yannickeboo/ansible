@@ -1,0 +1,20 @@
+--- # first play book
+- hosts: testing_localhost
+  tasks:
+    - name: Removing httpd
+      yum:
+        name: httpd
+        state: absent
+    - name: adding httpd
+      yum:
+        name: httpd
+        state: present
+- hosts: testing_localhost
+  tasks:
+    - name: Installing nginx
+      yum:
+        name: 
+          - nginx
+          - postgresql-server
+          - postgresql
+        state: present
