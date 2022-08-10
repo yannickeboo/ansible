@@ -1,0 +1,25 @@
+--- # first play book
+- hosts: testing_localhost
+  tasks:
+    - name: Removing httpd
+      yum:
+        name: "{{ var1 }}"
+        state: absent
+    - name: adding httpd
+      yum:
+        name: "{{ var1 }}"
+        state: present
+- hosts: testing_localhost
+  tasks:
+    - name: Installing nginx
+      yum:
+        name: "{{ var2 }}"
+        state: present
+- hosts: testing_localhost
+  tasks:
+    - name: create a file
+      lineinfile:
+        path: /home/ansible/hostname
+        create: yes
+      #  line: "{{ ansible_hostname}}"
+        line: " {{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}"
