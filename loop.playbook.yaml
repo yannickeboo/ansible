@@ -21,7 +21,7 @@
       yum:
         name: "{{ var1 }}"
         state: present
-- hosts: testing_localhost
+- hosts: testing_localhost  # 
   tasks:
     - name: Installing nginx
       yum:
